@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF Chat Assistant</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <h2>📄 PDF Chat Assistant</h2>
+    <div class="menu">
+      <button data-tab="upload" class="active">Upload PDF</button>
+      <button data-tab="retrieve">Retrieve</button>
+      <button data-tab="update">Update</button>
+      <button data-tab="delete">Delete</button>
+      <button data-tab="chat">Chat</button>
+    </div>
+
+    <!-- 🌗 Theme Toggle Button -->
+    <button id="theme_toggle" class="theme-btn">🌙 Dark Mode</button>
+  </div>
+
+  <div class="main">
+    <!-- Upload -->
+    <section id="upload" class="tab active">
+      <h3>Upload your PDF</h3>
+      <input id="upload_file" type="file" accept="application/pdf" />
+      <button id="upload_btn">Upload</button>
+      <div id="upload_result" class="result"></div>
+    </section>
+
+    <!-- Retrieve -->
+    <section id="retrieve" class="tab">
+      <h3>Retrieve File</h3>
+      <input id="retrieve_id" placeholder="Enter File ID" />
+      <button id="retrieve_btn">Retrieve</button>
+      <div id="retrieve_result" class="result"></div>
+    </section>
+
+    <!-- Update -->
+    <section id="update" class="tab">
+      <h3>Update PDF</h3>
+      <input id="update_id" placeholder="File ID" />
+      <input id="update_file" type="file" accept="application/pdf" />
+      <button id="update_btn">Update</button>
+      <div id="update_result" class="result"></div>
+    </section>
+
+    <!-- Delete -->
+    <section id="delete" class="tab">
+      <h3>Delete File</h3>
+      <input id="delete_id" placeholder="File ID" />
+      <button id="delete_btn">Delete</button>
+      <div id="delete_result" class="result"></div>
+    </section>
+
+    <!-- Chat -->
+    <section id="chat" class="tab">
+      <h3>Chat with your PDF 🤖</h3>
+      <input id="chat_id" placeholder="Enter File ID" />
+      <div id="chat_box" class="chat-box"></div>
+      <div class="chat-input">
+        <textarea id="question" placeholder="Ask a question..."></textarea>
+        <button id="ask_btn">Send</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
