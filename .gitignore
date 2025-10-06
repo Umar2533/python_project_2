@@ -1,0 +1,20 @@
+# Ignore Python cache and environment
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+
+# Ignore VS Code and virtualenv
+.vscode/
+venv/
+env/
+
+# Ignore uploaded files and sensitive files
+uploads/*
+!uploads/.gitkeep
+.env
+
+# System files
+.DS_Store
+Thumbs.db

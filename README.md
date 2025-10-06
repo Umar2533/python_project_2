@@ -28,4 +28,8 @@ project_root/
 │ └── script.js # JS logic
 ├── uploads/ # Stores uploaded PDFs (ignored in Git)
 │ └── .gitkeep
+<<<<<<< HEAD
 └── README.md
+=======
+└── README.md
+>>>>>>> 2e1782345ff2ffc10b5ccc5fec206a2df112507b
