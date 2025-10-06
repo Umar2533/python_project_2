@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* ------------------ */
+/* Theme Variables */
+/* ------------------ */
+:root {
+  --bg: #F9FAFB;
+  --text: #1F2937;
+  --panel: #FFFFFF;
+  --border: #E5E7EB;
+  --chat-user-bg: #DCFCE7;
+  --chat-bot-bg: #E0F2FE;
+  --accent: #10A37F;
+}
+
+body.dark {
+  --bg: #0D1117;
+  --text: #EDEDED;
+  --panel: #161B22;
+  --border: #30363D;
+  --chat-user-bg: #2563EB;
+  --chat-bot-bg: #10A37F;
+}
+
+/* ------------------ */
+/* Layout & Sidebar */
+/* ------------------ */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  display: flex;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar {
+  width: 240px;
+  background: var(--panel);
+  border-right: 1px solid var(--border);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+  transition: background 0.3s, border 0.3s;
+}
+.sidebar h2 {
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 20px;
+}
+.menu button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.menu button.active,
+.menu button:hover {
+  background-color: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* ------------------ */
+/* Theme Toggle Button */
+/* ------------------ */
+.theme-btn {
+  margin-top: auto;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.theme-btn:hover {
+  filter: brightness(0.9);
+}
+
+/* ------------------ */
+/* Main Area */
+/* ------------------ */
+.main {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+h3 {
+  color: var(--accent);
+  margin-top: 0;
+}
+.tab {
+  display: none;
+}
+.tab.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-top: 8px;
+  font-size: 15px;
+  background: var(--panel);
+  color: var(--text);
+  transition: all 0.3s;
+}
+button {
+  background-color: var(--accent);
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: 0.3s;
+}
+button:hover {
+  background-color: #0E8C6F;
+}
+
+/* ------------------ */
+/* Chat Section */
+/* ------------------ */
+.chat-box {
+  height: 60vh;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 15px;
+  overflow-y: auto;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+.chat-message {
+  margin: 10px 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  max-width: 75%;
+  animation: fadeIn 0.3s ease;
+  word-wrap: break-word;
+}
+.chat-user {
+  background: var(--chat-user-bg);
+  color: var(--text);
+  margin-left: auto;
+  text-align: right;
+}
+.chat-bot {
+  background: var(--chat-bot-bg);
+  color: var(--text);
+  margin-right: auto;
+  text-align: left;
+}
+.chat-input {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.chat-input textarea {
+  flex: 1;
+  resize: none;
+  height: 60px;
+}
+.result {
+  background: var(--panel);
+  border-left: 4px solid var(--accent);
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  white-space: pre-wrap;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(6px);}
+  to {opacity: 1; transform: translateY(0);}
+}
