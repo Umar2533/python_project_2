@@ -129,3 +129,9 @@ async def query_pdf(file_id: str, question: str):
     text = meta.get("text", "")
     answer = simple_answer_from_text(text, question)
     return {"question": question, "answer": answer}
+
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
