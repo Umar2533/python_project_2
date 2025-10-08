@@ -1,8 +1,11 @@
+
+import os
+import uvicorn
 from fastapi import FastAPI, Request, UploadFile, File, HTTPException
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-import uuid, os, json
+import uuid, json
 from PyPDF2 import PdfReader
 from typing import Optional
 
@@ -131,7 +134,7 @@ async def query_pdf(file_id: str, question: str):
     return {"question": question, "answer": answer}
 
 
+
 if __name__ == "__main__":
-    import uvicorn
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run("main:app", host="0.0.0.0", port=port)
